@@ -38,15 +38,41 @@ class RouteServiceProvider extends ServiceProvider
         $this->configureRateLimiting();
 
         $this->routes(function () {
-            Route::prefix('api')
+//            Route::middleware('api')
+//                ->namespace($this->namespace)
+//                ->group(base_path('routes/api.php'));
+//
+            // Paths for the discord bot
+            Route::prefix("discord")
                 ->middleware('api')
-                ->namespace($this->namespace)
-                ->group(base_path('routes/api.php'));
+                ->name($this->namespace)
+                ->group(base_path('routes/discord.php'));
 
-            Route::middleware('web')
-                ->namespace($this->namespace)
-                ->group(base_path('routes/web.php'));
+            // Paths for the homepage
+            Route::prefix("tigotech")
+                ->middleware('api')
+                ->name($this->namespace)
+                ->group(base_path('routes/tigotech.php'));
+
+            // Paths for the infra
+            Route::prefix("infra")
+                ->middleware('api')
+                ->name($this->namespace)
+                ->group(base_path('routes/infra.php'));
+
+            // Paths for the blog
+            Route::prefix("blog")
+                ->middleware('api')
+                ->name($this->namespace)
+                ->group(base_path('routes/blog.php'));
+
+            // Paths for the management
+            Route::prefix("management")
+                ->middleware('api')
+                ->name($this->namespace)
+                ->group(base_path('routes/management.php'));
         });
+
     }
 
     /**
