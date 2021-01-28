@@ -32,7 +32,7 @@ namespace tigotech
 
             
 
-            const string token = "ODA0MDU4ODYxNzA2Njc0MjQ2.YBG0Kw.rwbELhsBhd1r8FniALSiJ9Yf_aw";
+            const string token = "";
 
             // Set the Log, MessageReceived, UserJoined and UserLeft listeners
             _client.Log += Log;
