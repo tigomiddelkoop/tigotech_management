@@ -15,7 +15,7 @@ namespace tigotech
             var message = messageParam as SocketUserMessage;
             if (message == null || message.Author.Id == _client.CurrentUser.Id || message.Author.IsBot) return;
             Console.WriteLine("2");
-            int argPos = 0;
+            int  argPos = 0;
 
             Console.WriteLine(message.Content + message.Attachments);
 

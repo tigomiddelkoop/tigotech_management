@@ -8,14 +8,16 @@ namespace tigotech
 {
     class Program
     {
-        public static DiscordSocketClient _client { get; set; }
+        public static DiscordSocketClient _client { get; private set; }
+        // The tigo.tech serverid. I want to move this to a config file so other might use this bot as well
+        public static ulong ServerId { get; } = 803075300979769345;
         private CommandService _commands;
 
-        public static void Main(string[] args)
+        public static void  Main(string[] args)
             => new Program().MainAsync().GetAwaiter().GetResult();
-        
-        
-        public async Task MainAsync()
+
+
+        private async Task MainAsync()
         {
             _client = new DiscordSocketClient(new DiscordSocketConfig
             {
@@ -28,20 +30,23 @@ namespace tigotech
                 CaseSensitiveCommands = false,
             });
 
-            _client.Log += Log;
-
-            const string token = "";
             
 
+            const string token = "ODA0MDU4ODYxNzA2Njc0MjQ2.YBG0Kw.rwbELhsBhd1r8FniALSiJ9Yf_aw";
+
+            // Set the Log, MessageReceived, UserJoined and UserLeft listeners
+            _client.Log += Log;
             _client.MessageReceived += CommandHandler.HandleCommandAsync;
             _client.UserJoined += UserJoined.HandleJoin;
-            await _client.LoginAsync(TokenType.Bot, token);
-            await _client.StartAsync();
-
+            _client.UserLeft += UserLeft.HandleLeft;
             Game game = new Game("tigo.tech", ActivityType.Watching);
             await _client.SetActivityAsync(game);
             await _client.SetStatusAsync(UserStatus.Online);
-
+            
+            // Login and start the bot
+            await _client.LoginAsync(TokenType.Bot, token);
+            await _client.StartAsync();
+            
             await Task.Delay(-1);
         }
 
