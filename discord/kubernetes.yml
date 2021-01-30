@@ -17,3 +17,5 @@ spec:
       containers:
         - name: discord
           image: rg.nl-ams.scw.cloud/genericdevelopment/discord:0.0.1
+      imagePullSecrets:
+        - name: regcred
