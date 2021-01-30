@@ -22,7 +22,7 @@ class CreateHomepageProjects extends Migration
             $table->string("images");
             $table->string("website");
             $table->string("shortDescription");
-            $table->string("longDescription");
+            $table->longText("longDescription");
             $table->string("languages");
             $table->string("sourceControl");
         });
