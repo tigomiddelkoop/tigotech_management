@@ -30,9 +30,9 @@ namespace tigotech
                 CaseSensitiveCommands = false,
             });
 
-            
 
-            const string token = "";
+
+            String token = Environment.GetEnvironmentVariable("token");
 
             // Set the Log, MessageReceived, UserJoined and UserLeft listeners
             _client.Log += Log;
