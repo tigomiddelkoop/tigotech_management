@@ -16,6 +16,13 @@ spec:
     spec:
       containers:
         - name: discord
-          image: rg.nl-ams.scw.cloud/genericdevelopment/discord:0.0.1
+          image: rg.nl-ams.scw.cloud/genericdevelopment/discord:0.0.3
+          env:
+            - name: token
+              valueFrom:
+                secretKeyRef:
+                  name: bottoken
+                  key: token
+                  optional: false
       imagePullSecrets:
         - name: regcred

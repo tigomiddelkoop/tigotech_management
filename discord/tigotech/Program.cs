@@ -31,7 +31,8 @@ namespace tigotech
             });
 
 
-
+            Console.WriteLine("Token");
+            Console.WriteLine(Environment.GetEnvironmentVariable("token"));
             String token = Environment.GetEnvironmentVariable("token");
 
             // Set the Log, MessageReceived, UserJoined and UserLeft listeners
@@ -39,7 +40,7 @@ namespace tigotech
             _client.MessageReceived += CommandHandler.HandleCommandAsync;
             _client.UserJoined += UserJoined.HandleJoin;
             _client.UserLeft += UserLeft.HandleLeft;
-            Game game = new Game("tigo.tech", ActivityType.Watching);
+            Game game = new Game("with Kubernetes", ActivityType.Playing);
             await _client.SetActivityAsync(game);
             await _client.SetStatusAsync(UserStatus.Online);
             
