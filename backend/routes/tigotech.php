@@ -7,4 +7,4 @@ use App\Http\Controllers\tigotech\project;
 
 Route::get("skills", skills::class)->name("tigotech_skills");
 Route::get("projects", projects::class)->name("tigotech_projects");
-Route::get("projects/{id}", project::class)->name("tigotech_project");
+Route::get("projects/{slug}", project::class)->name("tigotech_project");
