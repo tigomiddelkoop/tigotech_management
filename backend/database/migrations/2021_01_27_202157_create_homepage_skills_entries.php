@@ -16,7 +16,7 @@ class CreateHomepageSkillsEntries extends Migration
         Schema::create('homepage_skills_entries', function (Blueprint $table) {
             $table->id();
 
-            $table->integer("skills_id");
+            $table->integer("skill_id");
             $table->string("names");
             $table->string("date");
             $table->integer("confidence");
