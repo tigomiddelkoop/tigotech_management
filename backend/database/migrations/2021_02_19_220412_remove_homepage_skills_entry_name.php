@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class DropLongdescriptionInHomepageProjects extends Migration
+class RemoveHomepageSkillsEntryName extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,7 @@ class DropLongdescriptionInHomepageProjects extends Migration
      */
     public function up()
     {
-        Schema::table('homepage_projects', function (Blueprint $table) {
-            $table->dropColumn("long_description");
-        });
+        Schema::dropIfExists('homepage_skills_entries_name');
     }
 
     /**
@@ -25,8 +23,13 @@ class DropLongdescriptionInHomepageProjects extends Migration
      */
     public function down()
     {
-        Schema::table('homepage_projects', function (Blueprint $table) {
-            $table->longText("long_description");
+        Schema::create('homepage_skills_entries_name', function (Blueprint $table) {
+            $table->id();
+
+            $table->integer("skill_id");
+            $table->string("name");
+
+            $table->timestamps();
         });
     }
 }

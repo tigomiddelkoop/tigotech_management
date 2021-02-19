@@ -15,11 +15,12 @@ class CreateHomepageSkills extends Migration
     {
         Schema::create('homepage_skills', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
 
             $table->string("title");
-            $table->string("subTitle");
+            $table->string("sub_title");
             $table->string("image");
+
+            $table->timestamps();
         });
     }
 

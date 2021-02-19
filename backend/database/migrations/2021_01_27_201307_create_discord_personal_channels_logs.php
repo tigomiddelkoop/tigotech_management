@@ -15,12 +15,13 @@ class CreateDiscordPersonalChannelsLogs extends Migration
     {
         Schema::create('discord_personal_channels_logs', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
 
-            $table->string("userId");
-            $table->string("channelId");
-            $table->string("channelName");
-            $table->string("userName");
+            $table->string("user_id");
+            $table->string("user_name");
+            $table->string("channel_id");
+            $table->string("channel_name");
+
+            $table->timestamps();
         });
     }
 
@@ -31,6 +32,6 @@ class CreateDiscordPersonalChannelsLogs extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('discord_personal_channel_logs');
+        Schema::dropIfExists('discord_personal_channels_logs');
     }
 }

@@ -15,10 +15,11 @@ class CreateDiscordPersonalChannels extends Migration
     {
         Schema::create('discord_personal_channels', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
 
-            $table->string("userId");
-            $table->string("channelId");
+            $table->string("user_id");
+            $table->string("channel_id");
+
+            $table->timestamps();
         });
     }
 
@@ -29,6 +30,6 @@ class CreateDiscordPersonalChannels extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('discord_private_chats');
+        Schema::dropIfExists('discord_personal_channels');
     }
 }

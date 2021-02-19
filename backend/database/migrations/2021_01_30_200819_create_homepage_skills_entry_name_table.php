@@ -15,9 +15,11 @@ class CreateHomepageSkillsEntryNameTable extends Migration
     {
         Schema::create('homepage_skills_entries_name', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
-            $table->integer("skillsId");
+
+            $table->integer("skill_id");
             $table->string("name");
+
+            $table->timestamps();
         });
     }
 
@@ -28,6 +30,6 @@ class CreateHomepageSkillsEntryNameTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('homepage_skills_name');
+        Schema::dropIfExists('homepage_skills_entries_name');
     }
 }

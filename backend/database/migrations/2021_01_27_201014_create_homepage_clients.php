@@ -15,13 +15,14 @@ class CreateHomepageClients extends Migration
     {
         Schema::create('homepage_clients', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
 
             $table->string("name");
             $table->string("logo");
             $table->string("about");
             $table->string("website");
             $table->string("services");
+
+            $table->timestamps();
         });
     }
 

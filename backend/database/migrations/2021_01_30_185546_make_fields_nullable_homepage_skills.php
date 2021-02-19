@@ -14,7 +14,7 @@ class MakeFieldsNullableHomepageSkills extends Migration
     public function up()
     {
         Schema::table('homepage_skills', function (Blueprint $table) {
-            $table->string("subTitle")->nullable()->change();
+            $table->string("sub_title")->nullable()->change();
             $table->string("image")->nullable()->change();
 
         });

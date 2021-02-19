@@ -15,7 +15,7 @@ class SetObjectNullableInHomepageProjects extends Migration
     {
         Schema::table('homepage_projects', function (Blueprint $table) {
             $table->string("website")->nullable()->change();
-            $table->string("shortDescription")->nullable()->change();
+            $table->string("short_description")->nullable()->change();
         });
     }
 

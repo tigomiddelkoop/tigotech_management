@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Discord;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class InfraTable extends Model
+class PersonalChannel extends Model
 {
     use HasFactory;
 }

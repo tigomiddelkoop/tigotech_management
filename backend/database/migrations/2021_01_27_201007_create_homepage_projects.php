@@ -15,16 +15,17 @@ class CreateHomepageProjects extends Migration
     {
         Schema::create('homepage_projects', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
 
             $table->string("name");
             $table->string("slug");
             $table->string("images");
             $table->string("website");
-            $table->string("shortDescription");
-            $table->longText("longDescription");
+            $table->string("short_description");
+            $table->longText("long_description");
             $table->string("languages");
-            $table->string("sourceControl");
+            $table->string("source_control");
+
+            $table->timestamps();
         });
     }
 

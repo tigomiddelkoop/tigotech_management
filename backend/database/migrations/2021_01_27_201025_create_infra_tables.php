@@ -15,10 +15,10 @@ class CreateInfraTables extends Migration
     {
         Schema::create('infra_tables', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
 
             $table->string("title");
 
+            $table->timestamps();
         });
     }
 

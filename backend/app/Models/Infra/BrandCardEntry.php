@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Infra;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class HomepageClient extends Model
+class BrandCardEntry extends Model
 {
     use HasFactory;
 }

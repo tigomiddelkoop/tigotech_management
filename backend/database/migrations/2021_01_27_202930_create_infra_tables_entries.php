@@ -17,10 +17,10 @@ class CreateInfraTablesEntries extends Migration
             $table->id();
             $table->timestamps();
 
-            $table->integer("infraTableId");
+            $table->integer("infra_table_id");
             $table->string("name");
             $table->string("image");
-            $table->boolean("nameOverride");
+            $table->boolean("name_override");
         });
     }
 

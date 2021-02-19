@@ -3,10 +3,9 @@
 namespace App\Http\Controllers\tigotech;
 
 use App\Http\Controllers\Controller;
-use App\Models\HomepageProject;
-use Illuminate\Http\Request;
+use App\Models\Homepage\Project;
 
-class project extends Controller
+class ProjectController extends Controller
 {
     /**
      * Handle the incoming request.
@@ -16,7 +15,7 @@ class project extends Controller
      */
     public function __invoke($slug)
     {
-        $project = HomepageProject::where("slug", "=", $slug)->get();
+        $project = Project::where("slug", "=", $slug)->get();
 //        $project['longDescription'] =
 
 //        echo $project->longdescription()->get();

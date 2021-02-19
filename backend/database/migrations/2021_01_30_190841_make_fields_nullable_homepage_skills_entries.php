@@ -25,6 +25,6 @@ class MakeFieldsNullableHomepageSkillsEntries extends Migration
      */
     public function down()
     {
-        //
+
     }
 }

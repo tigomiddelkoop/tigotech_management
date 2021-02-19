@@ -16,7 +16,7 @@ class CreateHomepageProjectsLongDescriptions extends Migration
         Schema::create('homepage_projects_long_descriptions', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->integer("projectId");
+            $table->integer("project_id");
             $table->longText("description");
         });
     }
@@ -28,6 +28,6 @@ class CreateHomepageProjectsLongDescriptions extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('homepage_projects_long_description');
+        Schema::dropIfExists('homepage_projects_long_descriptions');
     }
 }

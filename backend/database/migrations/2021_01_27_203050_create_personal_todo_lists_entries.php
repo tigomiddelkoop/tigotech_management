@@ -17,7 +17,7 @@ class CreatePersonalTodoListsEntries extends Migration
             $table->id();
             $table->timestamps();
 
-            $table->integer("todoListId");
+            $table->integer("todo_list_id");
             $table->string("task");
             $table->boolean("done");
         });

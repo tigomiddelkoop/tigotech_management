@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Discord;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class DiscordPersonalChannelsLog extends Model
+class PersonalChannelsLog extends Model
 {
     use HasFactory;
 }

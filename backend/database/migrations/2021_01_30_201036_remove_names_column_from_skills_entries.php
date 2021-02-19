@@ -25,7 +25,7 @@ class RemoveNamesColumnFromSkillsEntries extends Migration
      */
     public function down()
     {
-        Schema::table('homepage_skills', function (Blueprint $table) {
+        Schema::table('homepage_skills_entries', function (Blueprint $table) {
             $table->string("names");
         });
     }
